@@ -1,0 +1,10 @@
+FROM nginx
+
+# Copy application dist.
+COPY ./dist /usr/share/nginx/html
+# RUN chmod -R 755 /usr/share/nginx
+RUN chmod -R 755 /usr/share/nginx
+COPY ./default.conf /etc/nginx/conf.d/
+
+# Port
+EXPOSE 80
